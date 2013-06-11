@@ -41,7 +41,10 @@ Placing a screenshot request to the webshot-amqp server:
 var client = require('webshot-amqp-client');
 
 // call init() and pass it a callback function
-client.init(function() {
+client.init({
+	cloudinary: {cloudName: "", apiKey: "", apiSecret: ""}
+	, amqp: {host: "", port: 0, username: "", password: "", vhost: ""}
+}, function() {
 
 	client.requestScreenshot('http://www.github.com');
 	
