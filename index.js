@@ -25,8 +25,8 @@ exports.init = function(opts, callback) {
 	});
 };
 
-exports.requestScreenshot = function(url) {
-	producer.requestScreenshot({url: url});
+exports.requestScreenshot = function(url, filename) {
+	producer.requestScreenshot({url: url, filename: filename});
 };
 
 exports.onScreenshot = function(callback) {
