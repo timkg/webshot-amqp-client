@@ -20,8 +20,11 @@ Listening for new screenshots:
 ```javascript
 var client = require('webshot-amqp-client');
 
-// call init() and pass it a callback function
-client.init(function() {
+// call init() and pass it credentials/options and a callback function
+client.init({
+	cloudinary: {cloudName: "", apiKey: "", apiSecret: ""}
+	, amqp: {host: "", port: 0, username: "", password: "", vhost: ""}
+}, function() {
 
 	// define what to do when a screenshot arrives on the queue
 	client.onScreenshot(function(err, msg) {
