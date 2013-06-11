@@ -1,13 +1,13 @@
-webshot-queue-client
+webshot-amqp-client
 ====================
 
-A client library to request and receive screenshots from the webshot-queue AMQP server.
+A client library to request and receive screenshots from the webshot-amqp AMQP server.
 
 Installation
 ============
 
 ```
-npm install webshot-queue-client
+npm install webshot-amqp-client
 ```
 
 Usage
@@ -16,7 +16,7 @@ Usage
 Listening for new screenshots:
 
 ```javascript
-var client = require('webshot-queue-client');
+var client = require('webshot-amqp-client');
 
 // call init() and pass it a callback function
 client.init(function() {
@@ -30,10 +30,10 @@ client.init(function() {
 });
 ```
 
-Placing a screenshot request to the webshot-queue server:
+Placing a screenshot request to the webshot-amqp server:
 
 ```javascript
-var client = require('webshot-queue-client');
+var client = require('webshot-amqp-client');
 
 // call init() and pass it a callback function
 client.init(function() {
