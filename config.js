@@ -7,12 +7,12 @@ module.exports = {
 			password: "guest",
 			vhost: "/"
 		},
-		requestProducer: {
+		producer: {
 			exchangeName: "screenshot.exchange",
 			queueName: "screenshot.request",
 			routingKey: "request"
 		},
-		responseConsumer: {
+		consumer: {
 			exchangeName: "screenshot.exchange",
 			queueName: "screenshot.response",
 			routingKey: "response"
