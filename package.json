@@ -1,0 +1,10 @@
+{
+	"name": "webshot-queue-client"
+	, "description": "a client library to request and receive screenshots from the webshot-queue AMQP server"
+	, "version": "0.0.1"
+	, "dependencies": {
+		"cloudinary": "*"
+		, "request": "*"
+		, "amqp": "*"
+	}
+}
