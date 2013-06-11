@@ -5,9 +5,13 @@ var amqp = require('amqp')
   , producer = require('./src/producer')
   , connection;
 
-exports.init = function(callback) {
-	cloudinary.init(config.cloudinary);
-	connection = amqp.createConnection(config.amqp.credentials);
+exports.init = function(opts, callback) {
+	if (!opts || !opts.cloudinary || !opts.amqp) {
+		throw new Error('webshot-amqp-client\'s init() requires options object with "cloudinary" and "amqp" option properties');
+		process.exit(1);
+	}
+	cloudinary.init(opts.cloudinary);
+	connection = amqp.createConnection(opts.amqp);
 
 	connection.on('ready', function() {
 		producer.init(connection, config.amqp.producer);
